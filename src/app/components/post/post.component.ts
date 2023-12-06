@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IPost} from "../../interfaces/post.interface";
 
 @Component({
@@ -9,8 +9,14 @@ import {IPost} from "../../interfaces/post.interface";
   styleUrl: './post.component.css'
 })
 export class PostComponent {
-@Input()
-  post:IPost
   @Input()
-  id:number
+  post: IPost[]
+  @Input()
+  id: number
+  @Output()
+  getPosts = new EventEmitter<IPost[]>()
+
+  getPostsOfCurrentUser(): void {
+    this.getPosts.emit(this.post)
+  }
 }

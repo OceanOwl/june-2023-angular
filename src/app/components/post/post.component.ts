@@ -10,11 +10,13 @@ import {IPost} from "../../interfaces/post.interface";
 })
 export class PostComponent {
   @Input()
-  post: IPost[]
+  post: IPost
+
   @Input()
   id: number
+
   @Output()
-  getPosts = new EventEmitter<IPost[]>()
+  getPosts = new EventEmitter<IPost>();
 
   getPostsOfCurrentUser(): void {
     this.getPosts.emit(this.post)

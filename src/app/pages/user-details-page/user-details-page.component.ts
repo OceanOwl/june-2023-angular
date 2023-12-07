@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterOutlet} from "@angular/router";
 
-import {UserDetailsComponent} from "../../components";
+import {PostsComponent, UserDetailsComponent} from "../../components";
 import {PostDetailsPageComponent} from "../post-details-page/post-details-page.component";
 import {PostsPageComponent} from "../posts-page/posts-page.component";
 
@@ -12,7 +12,8 @@ import {PostsPageComponent} from "../posts-page/posts-page.component";
     UserDetailsComponent,
     RouterOutlet,
     PostDetailsPageComponent,
-    PostsPageComponent
+    PostsPageComponent,
+    PostsComponent
   ],
   templateUrl: './user-details-page.component.html',
   styleUrl: './user-details-page.component.css'

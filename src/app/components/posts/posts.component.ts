@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
 import {IPost} from "../../interfaces";
 import {PostComponent} from "../post/post.component";
@@ -16,8 +16,11 @@ import {NgForOf, NgIf} from "@angular/common";
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css'
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit{
   @Input()
   posts: IPost[];
   post: IPost;
+
+  ngOnInit(): void {
+  }
 }

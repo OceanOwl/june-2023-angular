@@ -7,6 +7,5 @@
   <div>website: {{user.website}}</div>
   <button (click)="getPosts(user.id)">Get Posts</button>
 </div>
-<!--<router-outlet *ngFor="let post of posts" [post]="post"></router-outlet>-->
 
-<!--<app-post *ngFor="let post of posts" [post]="post"></app-post>-->
+<app-post *ngFor="let post of posts" [post]="post"></app-post>

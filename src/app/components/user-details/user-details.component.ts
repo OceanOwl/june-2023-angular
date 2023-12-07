@@ -5,7 +5,6 @@ import {IPost, IUser} from "../../interfaces";
 import {PostsService, UserService} from "../../services";
 import {NgForOf, NgIf} from "@angular/common";
 import {PostComponent} from "../post/post.component";
-import {PostsPageComponent} from "../../pages";
 
 @Component({
   selector: 'app-user-details',

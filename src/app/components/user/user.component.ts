@@ -3,13 +3,15 @@ import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
 
 import {IUser} from "../../interfaces";
 import {PostComponent} from "../post/post.component";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-user',
   standalone: true,
   imports: [
     RouterOutlet,
-    PostComponent
+    PostComponent,
+    NgIf
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'

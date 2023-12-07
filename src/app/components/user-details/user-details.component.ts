@@ -1,19 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, RouterLink} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink, RouterOutlet} from "@angular/router";
 
 import {IPost, IUser} from "../../interfaces";
 import {PostsService, UserService} from "../../services";
+import {NgForOf, NgIf} from "@angular/common";
+import {PostComponent} from "../post/post.component";
+import {PostsPageComponent} from "../../pages";
 
 @Component({
   selector: 'app-user-details',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    NgIf,
+    PostComponent,
+    NgForOf,
+    RouterOutlet
   ],
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.css'
 })
 export class UserDetailsComponent implements OnInit {
+
   user: IUser;
   posts: IPost[];
 
@@ -37,6 +45,8 @@ export class UserDetailsComponent implements OnInit {
 
   getPosts(userId: number) {
     this.postsService.getByUserId(userId).subscribe(value => this.posts = value)
-    console.log(this.posts);
-  }
-}
+    this.router.navigate(['posts'], {
+      relativeTo: this.activatedRoute,
+      state: this.posts
+    })
+}}

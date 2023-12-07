@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {CommentsComponent} from "../../components";
 
 @Component({
   selector: 'app-comments-page',
   standalone: true,
-  imports: [],
+    imports: [
+        CommentsComponent
+    ],
   templateUrl: './comments-page.component.html',
   styleUrl: './comments-page.component.css'
 })

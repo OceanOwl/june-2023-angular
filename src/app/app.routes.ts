@@ -19,7 +19,7 @@ export const routes: Routes = [{
     },
     {
       path: 'users/:id/posts/:postId', component: PostDetailsPageComponent, children: [
-        {path: 'users/:id/posts/:postId/comments', component: CommentsPageComponent}
+        // {path: 'users/:id/posts/:postId/comments', component: CommentsPageComponent}
       ]
     }
   ]

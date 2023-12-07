@@ -3,12 +3,14 @@ import {IPost} from "../../interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
 import {PostsService} from "../../services";
 import {NgIf} from "@angular/common";
+import {CommentsPageComponent} from "../../pages";
 
 @Component({
   selector: 'app-post-details',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    CommentsPageComponent
   ],
   templateUrl: './post-details.component.html',
   styleUrl: './post-details.component.css'

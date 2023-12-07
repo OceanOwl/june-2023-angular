@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+
 import {MainLayoutComponent} from "./layouts";
 import {
   CommentsPageComponent,
@@ -13,7 +14,7 @@ export const routes: Routes = [{
     {path: '', redirectTo: 'users', pathMatch: 'full'},
     {path: 'users', component: UsersPageComponent},
     {path: 'users/:id', component: UserDetailsPageComponent, children: [
-        {path: 'posts', component: PostsPageComponent}
+        {path: 'users/:id/posts', component: PostsPageComponent}
       ]
     },
     {

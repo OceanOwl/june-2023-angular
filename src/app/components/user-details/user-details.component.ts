@@ -42,10 +42,13 @@ export class UserDetailsComponent implements OnInit {
 
   }
 
-  getPosts(userId: number) {
+  getPosts(userId: number)
+  {
     this.postsService.getByUserId(userId).subscribe(value => this.posts = value)
     this.router.navigate(['posts'], {
       relativeTo: this.activatedRoute,
       state: this.posts
     })
-}}
+}
+
+}

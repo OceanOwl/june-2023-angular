@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {ICar} from "../interfaces";
 import {urls} from "../constants";
 
@@ -8,6 +8,8 @@ import {urls} from "../constants";
   providedIn: 'root'
 })
 export class CarServiceService {
+  private trigger = new BehaviorSubject<boolean>(null)
+  private carForUpdate = new BehaviorSubject<ICar>(null)
 
   constructor(private httpClient: HttpClient) {
 
@@ -29,4 +31,19 @@ export class CarServiceService {
     return this.httpClient.delete<void>(urls.cars.byId(id))
   }
 
+  getTriggerStatus(): Observable<boolean> {
+    return this.trigger.asObservable()
+  }
+
+  setTrigger(): void {
+    return this.trigger.next(!this.trigger.value)
+  }
+
+  getCarForUpdate(): Observable<ICar> {
+    return this.carForUpdate.asObservable()
+  }
+
+  setCarForUpdate(data: ICar): void {
+    return this.carForUpdate.next(data)
+  }
 }

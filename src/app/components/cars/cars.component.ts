@@ -14,12 +14,16 @@ import {NgForOf} from "@angular/common";
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css'
 })
-export class CarsComponent implements OnInit{
+export class CarsComponent implements OnInit {
   cars: ICar[];
-constructor(private carServiceService:CarServiceService) {
-}
+
+  constructor(private carServiceService: CarServiceService) {
+  }
+
   ngOnInit(): void {
-  this.carServiceService.getAll().subscribe(value => this.cars = value)
+    this.carServiceService.getTriggerStatus().subscribe(() => {
+      this.carServiceService.getAll().subscribe(value => this.cars = value)
+    })
   }
 
 }

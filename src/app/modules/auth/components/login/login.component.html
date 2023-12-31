@@ -3,6 +3,9 @@
     <mat-card-header>
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
+    <div class="error">
+      <mat-error *ngIf="error">Username or password is not correct</mat-error>
+    </div>
     <mat-card-content>
       <div>
         <mat-form-field appearance="outline">
@@ -20,7 +23,7 @@
 
     </mat-card-content>
 <mat-card-actions>
-  <button mat-raised-button color="primary">Login</button>
+  <button mat-raised-button color="primary" (click)="login()">Login</button>
 </mat-card-actions>
   </mat-card>
 </form>

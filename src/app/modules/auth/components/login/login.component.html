@@ -10,20 +10,20 @@
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Username</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="username">
+          <input matInput formControlName="username">
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Placeholder" type="password" formControlName="password">
+          <input matInput type="password" formControlName="password">
         </mat-form-field>
       </div>
 
     </mat-card-content>
-<mat-card-actions>
-  <button mat-raised-button color="primary" (click)="login()">Login</button>
-</mat-card-actions>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </mat-card-actions>
   </mat-card>
 </form>
